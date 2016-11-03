@@ -1,36 +1,47 @@
 
 
-// d3.select("svg")
-//     .append("circle")
-//     .attr("r", 20)
-//     .attr("cx", 20)
-//     .attr("cy", 20)
-//     .attr("id", "c1")
-//     .style("fill", "red");
-// d3.select("svg")
-//     .append("text")
-//     .attr("id", "a")
-//     .attr("x", 20)
-//     .attr("y", 20)
-//     .style("opacity", 0)
-//     .text("HELLO WORLD");
-// d3.select("svg")
-//     .append("circle")
-//     .attr("r", 100)
-//     .attr("cx", 400)
-//     .attr("cy", 400)
-//     .attr("id", "c2")
-//     .style("fill", "lightblue");
-// d3.select("svg")
-//     .append("text")
-//     .attr("id", "b")
-//     .attr("x", 400)
-//     .attr("y", 400)
-//     .style("opacity", 0)
-//     .text("Uh, hi.");
-
-
+d3.select("svg")
+    .append("circle")
+    .attr("r", 20)
+    .attr("cx", 20)
+    .attr("cy", 20)
+    .attr("id", "c1")
+    .style("fill", "red");
+d3.select("svg")
+    .append("text")
+    .attr("id", "a")
+    .attr("x", 20)
+    .attr("y", 20)
+    .style("opacity", 0)
+    .text("HELLO WORLD");
+d3.select("svg") 
+    .append("circle")
+    .data("Evoque")
+    .attr("r", 100)
+    .attr("cx", 400)
+    .attr("cy", 400)
+    .attr("id", "c2")
+    .style("fill", "lightblue");
+d3.select("svg")
+    .append("text")
+    .attr("id", "b")
+    .attr("x", 400)
+    .attr("y", 400)
+    .style("opacity", 0)
+    .text("Uh, hi.");
+    
 var svg = d3.select("svg");
+
+var ss = svg.select("circle").node();
+console.dir(svg.select("circle"));
+console.dir(ss);
+svg.select("circle").each(function(d, i){
+    var a = this;
+    console.dir(d);
+    console.dir(this);
+});
+
+
 
 
 // d3.csv("data/cities.csv", function (error, data) { dataViz(data) });
@@ -59,7 +70,7 @@ function dataViz(inData) {
 
 
 
-d3.json("data/tweets.json", function (data) { dataViz_Tweets_Details(data.tweets) });
+// d3.json("data/tweets.json", function (data) { dataViz_Tweets_Details(data.tweets) });
 
 function dataViz_Tweets(inData) {
 

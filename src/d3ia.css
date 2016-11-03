@@ -15,8 +15,10 @@ circle {
 
 circle.active {
     fill: red;
+    font-size: 20px;
 }
 
 circle.inactive {
     fill: gray;
 }
+ 
